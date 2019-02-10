@@ -1,0 +1,25 @@
+<head>
+  <link href="./styles/styles.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.16.1/dist/phaser.min.js"></script>
+  <script src="./js/game.js"></script>
+  <script>
+    $(document).ready(function() {
+      let config = {
+        type: Phaser.WEBGL,
+        width: window.innerWidth,
+        height: window.innerHeight,
+        scene: {
+          preload: preload,
+          create: create,
+          update, update
+        }
+      };
+
+      let game = new Phaser.Game(config);
+    })
+  </script>
+</head>
+<body>
+  
+</body>
