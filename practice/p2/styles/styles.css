@@ -1,0 +1,42 @@
+body {
+  background-color: white;
+  
+}
+
+.scd {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 50px;
+  margin-left: 25rem;
+}
+
+p {
+  font-family: 'Hind', sans-serif;
+  font-size: 20px;
+  margin-top: 1em;
+}
+
+.spacer {
+  margin-left: 25em;
+  margin-right: 25em;
+}
+
+.title-spacer {
+  background-color: #00294e;
+  padding-top: 0.8em;
+  padding-bottom: 1em;
+}
+
+.link {
+  color: #4c6b83;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #4c6b83;
+}
+
+.major {
+  font-weight: 500;
+}
