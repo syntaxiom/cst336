@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart - Practice</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <h1 class="title is-2">Spring Break Shopping</h1>
+  <table class="table">
+    <tr>
+      <th>Product</th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+    <tr>
+      <td>Towel</td>
+      <td>$30</td>
+      <td><input type="text" id="quantity-1" aria-label="quantity"></td>
+      <td><span id="total-1"></span></td>
+    </tr>
+    <tr>
+      <td>Sunscreen</td>
+      <td>$10</td>
+      <td><input type="text" id="quantity-2" aria-label="quantity"></td>
+      <td><span id="total-2"></span></td>
+    </tr>
+    <tr>
+      <td>Sandals</td>
+      <td>$20</td>
+      <td><input type="text" id="quantity-3" aria-label="quantity"></td>
+      <td><span id="total-3"></span></td>
+    </tr>
+    <tr>
+      <td>Shipping</td>
+      <td></td>
+      <td></td>
+      <td><span id="shipping"></span></td>
+    </tr>
+    <tr>
+      <td>Subtotal</td>
+      <td></td>
+      <td></td>
+      <td><span id="subtotal"></span></td>
+    </tr>
+    <tr>
+      <td>Tax</td>
+      <td></td>
+      <td></td>
+      <td><span id="tax"></span></td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td></td>
+      <td></td>
+      <td><span id="total"></span></td>
+    </tr>
+  </table>
+  <h2 class="title is-3">Shipping & handling</h2>
+  <div class="select">
+    <select id="shipping-options">
+      <option>Select one</option>
+      <option>Regular (5-8 days): $5.00</option>
+      <option>Three-day Delivery: $10.00</option>
+      <option>Next-day Delivery: $15.00</option>
+    </select>
+  </div>
+  <br>
+  <span id="must-ship" class="red"></span>
+  <br>
+  <input type="checkbox" name="confirm"  id="confirm">
+  <span class="title is-5" id="accept">I accept the terms of this purchase</span>
+  <br>
+  <br>
+  <button class="button" id="purchase">CONFIRM PURCHASE</button>
+  <br>
+  <br>
+  <span class="title is-4" id="thanks"></span>
+  <script src="js/index.js"></script>
+</body>
+</html>
