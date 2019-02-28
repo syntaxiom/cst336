@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.success {
+    color: green;
+}
+
+.fail {
+    color: red;
+}
+
+.status {
+    padding-left: 1em;
+}
