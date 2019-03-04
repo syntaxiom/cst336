@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Practice 5: Like/Dislike Video App</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="styles/styles.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column align-items-center">
+
+  <!--Embed here any YouTube video using the "iframe" tag -->
+  <div class="m-3">
+    <iframe width="1080" height="720" src="https://www.youtube.com/embed/oHg5SJYRHA0" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  
+  <div class="w-50">
+    <button class="btn btn-outline-secondary" id="comments">
+      Get Comments
+    </button>
+    
+    <div class="row float-right">
+      <div class="col">
+        <button class="btn btn-outline-secondary" id="like" value="unchecked">
+          <i class="material-icons">
+            thumb_up
+          </i>
+        </button>
+        <button class="btn btn-success" id="cancel_like" value="checked">
+          <i class="material-icons">
+            thumb_up
+          </i>
+        </button>
+        <div class="text-center" id="like-value"></div>
+      </div>
+      <div class="col">
+        <button class="btn btn-outline-secondary" id="dislike" value="unchecked">
+          <i class="material-icons">
+            thumb_down
+          </i>
+        </button>
+        <button class="btn btn-danger" id="cancel_dislike" value="checked">
+          <i class="material-icons">
+            thumb_down
+          </i>
+        </button>
+        <div class="text-center" id="dislike-value"></div>
+      </div>
+      <div class="progress w-100 my-2" style="height: 2px">
+        <div id="ratio" class="progress-bar" role="progressbar" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-50" id="comment-value">
+
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>
