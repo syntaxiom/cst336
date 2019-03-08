@@ -2,6 +2,8 @@
 <html>
     <head>
         <title> Sign Up - PHP Web API Version </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+        <link rel="stylesheet" href="styles/styles.css">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         
@@ -124,25 +126,45 @@
     </head>
     
     <body>
-        <fieldset>
-            <legend>
-                Sign Up
-            </legend>
-            
-            First Name: <input type="text" id="firstName" name="firstName" /> <br />
-            Last Name: <input type="text" id="lastName" name="lastName" /> <br />
-            
-            Username: <input type="text" id="username1" />
-            <span id="username1Error"></span> <br />
-            
-            Username: <input type="text" id="username2" />
-            <span id="username2Error" class="error"></span> <br />
-            <br />
-            
-            Password: <input type="password" id="password">
-            <span id="passwordHelper"></span> <br />
-            
-            <button> Sign up!</button>
-        </fieldset>
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column">
+                <fieldset>
+                    <legend class="title is-2" >
+                        Sign Up
+                    </legend>
+                    
+                    <span class="title is-4">First Name</span>
+                    <input class="input" type="text" id="firstName" name="firstName" /> <br /><br />
+                    
+                    <span class="title is-4">Last Name</span>
+                    <input class="input" type="text" id="lastName" name="lastName" /> <br /><br />
+                    
+                    <br />
+                    
+                    <span class="title is-4">Username (from text)</span>
+                    <input class="input" type="text" id="username1" />
+                    <span id="username1Error"></span> <br /><br />
+                    
+                    <span class="title is-4">Username (from JSON)</span>
+                    <input class="input" type="text" id="username2" />
+                    <span id="username2Error" class="error"></span> <br /><br />
+                    
+                    <br />
+                    
+                    <span class="title is-4">Password</span>
+                    <input class="input" type="password" id="password">
+                    <span id="passwordHelper"></span> <br /><br />
+                    
+                    <br />
+                    
+                    <button class="button"> Sign up!</button>
+                </fieldset> 
+            </div>
+            <div class="column"></div>
+            <div class="column"></div>
+        </div>
+        
     </body>
 </html>
