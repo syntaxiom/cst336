@@ -4,12 +4,56 @@
     <meta charset="UTF-8">
     <title>Practice 6</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
     <div>
-      <h1>Discount Shopping</h1>
-      <button id="get-product">Get product</button>
-      <div id="testing-product"></div>
+      <h1 class="title is 2">Discount Shopping</h1>
+      <table class="table is-striped">
+        <tr>
+          <th>Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+        <tr>
+          <td id="product-name">Towel</td>
+          <td id="product-price">$30</td>
+          <td><input class="input" type="text" id="product-quantity" aria-label="quantity"></td>
+          <td><span id="product-total"></span></td>
+        </tr>
+          <td>Discount</td>
+          <td></td>
+          <td><span id="discount"></span></td>
+          <td><span id="discount-amount"></span></td>
+        </tr>
+        <tr>
+          <td>Subtotal</td>
+          <td></td>
+          <td></td>
+          <td><span id="subtotal"></span></td>
+        </tr>
+        <tr>
+          <td>Tax</td>
+          <td></td>
+          <td></td>
+          <td><span id="tax"></span></td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td></td>
+          <td></td>
+          <td><span id="total"></span></td>
+        </tr>
+      </table>
+      <div class="columns">
+        <div class="column">
+          <div>
+            <input class="input" id="promo-code">
+          </div>
+        </div>
+      </div>
     </div>
     <script src="js/index.js"></script>
   </body>
