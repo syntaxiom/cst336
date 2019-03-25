@@ -1,0 +1,10 @@
+body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#product-name:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

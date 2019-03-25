@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Midterm Practice</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+    <div>
+      <h1 class="title">Discount Shopping</h1>
+      <table class="table table-striped">
+        <tr>
+          <th>Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+        <tr>
+          <td id="product-name" data-toggle="modal" data-target="#product-modal">Towel</td>
+          <td id="product-price">$30</td>
+          <td><input class="input" type="number" min="1" step="1" id="product-quantity" aria-label="quantity"></td>
+          <td id="product-total"></td>
+        </tr>
+        <tr>
+          <td>
+            <select class="w-100" value="0" id="extra-products">
+              <option hidden default>Select One</option>
+            </select>
+          </td>
+          <td id="extra-product-price"></td>
+          <td><input class="input" type="number" min="1" step="1" id="extra-product-quantity" aria-label="quantity"></td>
+          <td id="extra-product-total"></td>
+        </tr>
+        <tr>
+          <td>Discount</td>
+          <td></td>
+          <td><span id="discount"></span></td>
+          <td><span id="discount-amount"></span></td>
+        </tr>
+        <tr>
+          <td>Subtotal</td>
+          <td></td>
+          <td></td>
+          <td><span id="subtotal"></span></td>
+        </tr>
+        <tr>
+          <td>Tax</td>
+          <td></td>
+          <td></td>
+          <td><span id="tax"></span></td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td></td>
+          <td></td>
+          <td><span id="total"></span></td>
+        </tr>
+      </table>
+      <div class="columns">
+        <div class="column">
+          <div>
+            <input class="input" id="promo-code">
+          </div>
+          <div id="expiry" class="text-danger"></div>
+        </div>
+      </div>
+      
+      <div class="modal fade" id="product-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="product-modal-name"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img id="product-image" src="#" alt="#"/>
+              <div id="product-description"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
