@@ -2,14 +2,21 @@
 
 $bonuses = array();
 
-array_fill(0, 49, 1);
-array_fill(50, 24, 10);
-array_fill(75, 12, 100);
-array_fill(87, 6, 1000);
-array_fill(93, 3, 10000);
-array_fill(96, 2, 100000);
-array_fill(99, 1, 1000000);
+for ($i = 0; $i < 100; $i++) {
+    if ($i < 85) {
+        $bonuses[$i] = 1;
+    }
+    elseif ($i < 95) {
+        $bonuses[$i] = 10;
+    }
+    elseif ($i < 97) {
+        $bonuses[$i] = 100;
+    }
+    else {
+        $bonuses[$i] = 1000;
+    }
+}
 
-echo json_encode($bonuses[rand(0, count($bonuses))]);
+echo json_encode($bonuses[rand(0, 99)]);
 
 ?>

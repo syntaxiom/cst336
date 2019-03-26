@@ -8,6 +8,9 @@ const THREE_QUARTER_WIDTH = 3 * (WIDTH / 4);
 const THREE_QUARTER_HEIGHT = 3 * (HEIGHT / 4);
 const MONEY_HEIGHT = 75;
 
+const GRAY = '#4f4f4f';
+const YELLOW = '#ffff00';
+
 const CARD_VALUES = {
     '0': 10n,
     '2': 2n,
@@ -30,31 +33,36 @@ let frames;
 let locations = {};
 let multipliers = {};
 let title;
+let speedUpgradeText;
+let suitUpgradeText;
+let generalUpgradeText;
 
 let money = 0n;
 let generalMultiplier = 1n;
 let suitMultipliers = {
     'c': 1n,
-    'd': 1n,
-    'h': 1n,
-    's': 1n
+    'd': 2n,
+    'h': 4n,
+    's': 8n
 };
-let speed = 1000;
+let speed = 500;
 
-function getBonusMultiplier() {
+function onCardComplete(cv_key, sm_key) {
+    getMultipliers(cv_key, sm_key);
+}
+
+function getMultipliers(cv_key, sm_key) {
     let bonus;
 
     $.ajax({
         type: "GET",
-        url: "api/getStartingValues.php",
+        url: "api/randomMultiplierBonus.php",
         dataType: "json",
         success: function (data, status) {
-            bonus = data;
-            console.log(bonus);
+            addMoney(CARD_VALUES[cv_key] * suitMultipliers[sm_key] * BigInt(data) * generalMultiplier);
+            makeNextCard();
         }
     })
-
-    return BigInt(1);
 }
 
 function addMoney(amount) {
@@ -64,11 +72,6 @@ function addMoney(amount) {
 
 function makeNextCard() {
     p.add.image(HALF_WIDTH, HALF_HEIGHT, 'cards', Phaser.Math.RND.pick(frames)).setInteractive();
-}
-
-function onCardComplete(cv_key, sm_key) {
-    addMoney(CARD_VALUES[cv_key] * suitMultipliers[sm_key] * getBonusMultiplier() * generalMultiplier);
-    makeNextCard();
 }
 
 function preload() {
@@ -111,11 +114,17 @@ function create() {
     }
 
     title = this.add.text(0, 0, money.toString(), {fontFamily: 'Arial', fontSize: MONEY_HEIGHT - 7, color: '#00ff00'});
+    console.log(title);
+    generalUpgradeText = this.add.text(0, 1 * MONEY_HEIGHT, '-' + values.generalMultiplierCost, {fontFamily: 'Arial', fontSize: MONEY_HEIGHT - 7, color: YELLOW});
+    generalUpgradeText['active'] = false;
 
     makeNextCard();
 
     this.input.on('gameobjectdown', function (pointer, gameObject) {
-        if (!gameObject.done) {
+        if (gameObject.plus) {
+            
+        }
+        else if (!gameObject.done) {
             const frameName = gameObject.frame.name
             const location = locations[frameName];
 
@@ -130,12 +139,26 @@ function create() {
             });
         }
     }, this);
+    
+    this.input.on('pointerdown', function(pointer) {
+        if (pointer.x >= 0 && pointer.x < generalUpgradeText.width && pointer.y >= MONEY_HEIGHT && pointer.y < MONEY_HEIGHT + generalUpgradeText.height) {
+            const cost = values.generalMultiplierCost;
+            console.log(cost);
+            if (money >= cost) {
+                addMoney(-1n * cost);
+                values.generalMultiplierCost *= values.generalMultiplier;
+                generalUpgradeText.text = '-' + values.generalMultiplierCost;
+                speed -= 20;
+            }
+        }
+    }, this);
 }
 
 function update() {
     graphics.clear();
     graphics.fillStyle(0x000000, 0.5);
     graphics.fillRect(0, 0, WIDTH, MONEY_HEIGHT);
+    graphics.fillRect(0, 1 * MONEY_HEIGHT, generalUpgradeText.width, MONEY_HEIGHT);
 }
 
 var config = {

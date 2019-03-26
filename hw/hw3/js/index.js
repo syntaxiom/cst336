@@ -7,7 +7,12 @@ $(document).ready(function() {
         url: "api/getStartingValues.php",
         dataType: "json",
         success: function(data, status) {
-            values = data;
+            setValues(data);
         }
     })
 })
+
+function setValues(v) {
+    values['generalMultiplierCost'] = BigInt(v.generalMultiplierCost);
+    values['generalMultiplier'] = BigInt(v[0].generalMultiplier);
+}
