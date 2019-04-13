@@ -51,7 +51,8 @@ if (!isset($_SESSION['adminName'])) {
                       })
                     },
                     complete: function(data,status) { //optional, used for debugging purposes
-                    alert(status);
+                    console.log(data);
+                    // console.log(status);
                     }
                     
                 });//ajax
