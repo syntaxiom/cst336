@@ -1,8 +1,8 @@
 <?php
 
-//header('Access-Control-Allow-Origin: *');
+// header('Access-Control-Allow-Origin: *');
 
-$host = "us-cdbr-iron-east-03.cleardb.net";
+$host = "localhost";
 $dbname = "ottermart";
 $username = "root";
 $password = "";
