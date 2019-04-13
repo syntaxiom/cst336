@@ -52,7 +52,7 @@ if (!isset($_SESSION['adminName'])) {
                     },
                     complete: function(data,status) { //optional, used for debugging purposes
                     console.log(data);
-                    // console.log(status);
+                    console.log(status);
                     }
                     
                 });//ajax
