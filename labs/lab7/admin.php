@@ -33,7 +33,7 @@ if (!isset($_SESSION['adminName'])) {
                 $.ajax({
 
                     type: "GET",
-                    url: "./api/getProducts.php",
+                    url: "./getProducts.php",
                     dataType: "json",
                     success: function(data,status) {
                       //alert(data[0].productName);
