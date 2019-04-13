@@ -3,7 +3,7 @@
 // header('Access-Control-Allow-Origin: *');
 
 $host = "localhost";
-$dbname = "ottermart";
+$dbname = "heroku_866c6a4a6a8b135";
 $username = "root";
 $password = "";
 
