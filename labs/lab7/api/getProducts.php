@@ -2,7 +2,7 @@
 
 // header('Access-Control-Allow-Origin: *');
 include '../../../inc/dbConnection.php';
-$conn = getDatabaseConnection("heroku_866c6a4a6a8b135");
+$conn = getDatabaseConnection("ottermart");
 
 $sql = "SELECT * FROM om_product ORDER BY price";
 $stmt = $dbConn -> prepare($sql);  //$connection MUST be previously initialized
