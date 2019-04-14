@@ -1,17 +1,8 @@
 <?php
 
 // header('Access-Control-Allow-Origin: *');
-
-$host = "us-cdbr-iron-east-03.cleardb.net";
-$dbname = "heroku_866c6a4a6a8b135";
-$username = "root";
-$password = "";
-
-// Establishing a connection
-$dbConn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-
-// Setting Errorhandling to Exception
-$dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+include '../../../inc/dbConnection.php';
+$conn = getDatabaseConnection("heroku_866c6a4a6a8b135");
 
 $sql = "SELECT * FROM om_product ORDER BY price";
 $stmt = $dbConn -> prepare($sql);  //$connection MUST be previously initialized
