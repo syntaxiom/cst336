@@ -1,0 +1,96 @@
+[22-Apr-2019 19:33:53 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'q1' in 'where clause'' in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php:22
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/functions.php(22): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php on line 22
+[22-Apr-2019 19:34:07 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'q1' in 'where clause'' in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php:22
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/functions.php(22): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php on line 22
+[22-Apr-2019 19:35:41 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php:24
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/functions.php(24): PDOStatement->fetchAll(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php on line 24
+[22-Apr-2019 19:36:21 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'q1' in 'where clause'' in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php:22
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/functions.php(22): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php on line 22
+[22-Apr-2019 19:36:36 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php:24
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/functions.php(24): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php on line 24
+[22-Apr-2019 19:42:19 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE poll_response.pollId = 'q1'' at line 1' in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php:27
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/functions.php(27): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php on line 27
+[22-Apr-2019 19:42:33 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE poll_response.pollId = 'q1'' at line 1' in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php:27
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/functions.php(27): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php on line 27
+[22-Apr-2019 19:42:40 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE poll_response.pollId = 'q1'' at line 1' in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php:27
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/functions.php(27): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php on line 27
+[22-Apr-2019 19:43:35 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE poll_response.pollId = 'q1'' at line 1' in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php:27
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/functions.php(27): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php on line 27
+[22-Apr-2019 19:46:07 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE poll_response.pollId = 'q1'' at line 1' in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php:27
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/functions.php(27): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/functions.php on line 27
+[22-Apr-2019 20:07:38 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''option5' = 2 WHERE poll_response.pollId = 'q1'' at line 1' in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php:19
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php(19): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php on line 19
+[22-Apr-2019 20:09:43 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''option5' = 2 WHERE poll_response.pollId = 'q1'' at line 1' in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php:19
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php(19): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php on line 19
+[22-Apr-2019 20:15:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php:12
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php(12): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php on line 12
+[22-Apr-2019 20:16:10 UTC] PHP Warning:  json_decode() expects parameter 1 to be string, array given in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php on line 15
+[22-Apr-2019 20:16:10 UTC] PHP Stack trace:
+[22-Apr-2019 20:16:10 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php:0
+[22-Apr-2019 20:16:10 UTC] PHP   2. json_decode() /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php:15
+[22-Apr-2019 20:18:36 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php on line 16
+[22-Apr-2019 20:22:10 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''option5' = 1 WHERE poll_response.pollId = 'q1'' at line 1' in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php on line 20
+[22-Apr-2019 20:22:46 UTC] PHP Warning:  Illegal string offset 'option5' in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php on line 15
+[22-Apr-2019 20:22:46 UTC] PHP Stack trace:
+[22-Apr-2019 20:22:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php:0
+[22-Apr-2019 20:22:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''option5' = 1 WHERE poll_response.pollId = 'q1'' at line 1' in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php on line 20
+[22-Apr-2019 20:23:00 UTC] PHP Warning:  Illegal string offset 'option5' in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php on line 15
+[22-Apr-2019 20:23:00 UTC] PHP Stack trace:
+[22-Apr-2019 20:23:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php:0
+[22-Apr-2019 20:23:00 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''option5' = 1 WHERE poll_response.pollId = 'q1'' at line 1' in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php on line 20
+[22-Apr-2019 20:23:20 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''option5' = 1 WHERE poll_response.pollId = 'q1'' at line 1' in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/p8/api/user_submit.php on line 20

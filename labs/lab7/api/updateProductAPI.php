@@ -19,7 +19,7 @@ if (!isset($_SESSION['adminName'])) {
     productDescription =  :productDescription, 
     productImage = :productImage,
     catId = :catId
-    WHERE om_product.productId =  " .  $_GET['productId'];
+    WHERE om_product.productId = " .  $_GET['productId'];
     
     $arr = array();
     $arr[":productName"] = $_GET["productName"];

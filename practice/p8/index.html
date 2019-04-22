@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> CSUMB Poll </title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+
+    <h1> Is CSUMB the best campus in California? </h1>
+    <div class="q1">
+        <input type="radio" name="q1" value="option1">Strongly Disagree</input>
+        <input type="radio" name="q1" value="option2">Disagree</input>
+        <input type="radio" name="q1" value="option3">Neutral</input>
+        <input type="radio" name="q1" value="option4">Agree</input>
+        <input type="radio" name="q1" value="option5">Strongly Agree</input>
+        <button id="q1">Submit</button>
+    </div>
+    
+    <!--placeholder to display here chart-->
+    <div id="container"></div>
+
+    <!-- scripts -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+    <script>
+        let options = {
+            option1: 10,
+            option2: 20,
+            option3: 30,
+            option4: 40,
+            option5: 50
+        };
+        
+        function setChart() {
+            $.ajax({
+                type: "GET",
+                url: "api/functions.php",
+                dataType: "json",
+                data: options,
+                success: function(data, status) {
+                    console.log(data);
+                    options = {
+                        option1: Number(data.option1), 
+                        option2: Number(data.option2), 
+                        option3: Number(data.option3), 
+                        option4: Number(data.option4), 
+                        option5: Number(data.option5)
+                    }
+                    displayPollChart();
+                },
+                complete: function(data,status) {
+                    console.log(status);
+                }
+            });
+        }
+        
+        $(document).ready(function() {
+            setChart();
+        });
+        
+        $("#q1").on("click", function() {
+            if ($("input[name='q1']:checked").val() != undefined) {
+                // $.ajax({
+                //     type: "GET",
+                //     url: "api/user_submit.php",
+                //     dataType: "json",
+                //     data: {
+                //         option: $("input[name='q1']:checked").val()
+                //     },
+                //     success: function(data, status) {
+                //         console.log(data);
+                        
+                //         displayPollChart(Number(data.option1), Number(data.option2), Number(data.option3), Number(data.option4), Number(data.option5));
+                //     },
+                //     complete: function(data,status) {
+                //         console.log(status);
+                //     }
+                // })
+                options[$("input[name='q1']:checked").val()] += 1;
+                setChart();
+                $(".q1").css("display", "none");
+            }
+        })
+
+        //Here is an example call to display the chart
+        //You may need to parse to int if using strings
+        // displayPollChart(parseInt("10"),20,30,40,50);
+
+        //******
+        // Displays poll chart. For more info about charts visit https://www.highcharts.com/demo
+        // Parameters:
+        // option1 to option5 must be integers, represent the total users who selected each option
+        //*******
+        function displayPollChart() {
+            Highcharts.chart('container', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: ''
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    name: 'q1s',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'Strongly Disagree',
+                        y: options.option1,
+                        sliced: true,
+                        selected: true
+                    }, {
+                        name: 'Disagree',
+                        y: options.option2,
+                    }, {
+                        name: 'Neutral',
+                        y: options.option3
+                    }, {
+                        name: 'Agree',
+                        y: options.option4
+                    }, {
+                        name: 'Strongly Agree',
+                        y: options.option5
+                    }, ]
+                }]
+            });
+        } //endFunction
+    </script>
+</body>
+
+</html>
