@@ -33,13 +33,26 @@ let app = new Vue({
       this.currentGame.description._cdata = this.currentGame.description._cdata.split("\n")[0];
       this.updateText();
       document.getElementById('app').setAttribute('style', 'background-color: ' + _.sample(colors));
+      this.addToHistory();
       console.log(this.currentGame);
     },
     goToGamePage() {
       window.location.href = this.currentGame.link._text;
     },
     addToHistory() {
-      
+      $.ajax({
+            type: "GET",
+            url: "api/game.php",
+            dataType: "json",
+            data: {"title": this.currentGame.plainTitle._text},
+            success: function(data, status) {
+                console.log(data);
+                $("#quantity").text(data.quantity);
+            },
+            complete: function(data,status) {
+                console.log(status);
+            }
+        });
     }
   },
   async beforeMount() {

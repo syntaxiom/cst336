@@ -1,0 +1,28 @@
+[23-Apr-2019 05:56:34 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/cst336/hw/hw4/api/game.php on line 14
+[23-Apr-2019 05:56:34 UTC] PHP Stack trace:
+[23-Apr-2019 05:56:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw4/api/game.php:0
+[23-Apr-2019 05:56:34 UTC] PHP   2. selectGame() /home/ubuntu/workspace/cst336/hw/hw4/api/game.php:19
+[23-Apr-2019 05:56:40 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/cst336/hw/hw4/api/game.php on line 14
+[23-Apr-2019 05:56:40 UTC] PHP Stack trace:
+[23-Apr-2019 05:56:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw4/api/game.php:0
+[23-Apr-2019 05:56:40 UTC] PHP   2. selectGame() /home/ubuntu/workspace/cst336/hw/hw4/api/game.php:19
+[23-Apr-2019 05:58:36 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/cst336/hw/hw4/api/game.php on line 14
+[23-Apr-2019 05:58:36 UTC] PHP Stack trace:
+[23-Apr-2019 05:58:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw4/api/game.php:0
+[23-Apr-2019 05:58:36 UTC] PHP   2. selectGame() /home/ubuntu/workspace/cst336/hw/hw4/api/game.php:19
+[23-Apr-2019 05:59:40 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home/ubuntu/workspace/cst336/hw/hw4/api/game.php:15
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/game.php(15): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/game.php on line 15
+[23-Apr-2019 06:00:09 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home/ubuntu/workspace/cst336/hw/hw4/api/game.php:38
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/game.php(38): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/game.php on line 38
+[23-Apr-2019 06:07:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'game'' in /home/ubuntu/workspace/cst336/inc/dbConnection.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/inc/dbConnection.php(18): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 /home/ubuntu/workspace/cst336/hw/hw4/api/game.php(4): getDatabaseConnection('game')
+#2 {main}
+  thrown in /home/ubuntu/workspace/cst336/inc/dbConnection.php on line 18
