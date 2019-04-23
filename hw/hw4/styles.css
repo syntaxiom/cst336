@@ -1,0 +1,65 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+h1 {
+  font-size: 3.2em;
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+  padding-bottom: 1em;
+}
+
+.code {
+  font-family: 'IBM Plex Mono', monospace;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 400px;
+}
+
+.game-display {
+  padding: 2em 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 5px 5px white;
+  background-color: white;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+  font-size: 2em;
+  font-family: 'Roboto Slab', serif;
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: center;
+}
+
+.get-button {
+  padding: 0em 2em 0em 2em;
+}
+
+.button-text {
+  padding: 0em 0.5em 0em 0.5em
+}

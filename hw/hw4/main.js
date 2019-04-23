@@ -1,3 +1,5 @@
+const colors = ['#e57373', '#f06292', '#ba68c8', '#9575cd', '#7986cb', '#64b5f6', '#4fc3f7', '#4dd0e1', '#4db6ac', '#81c784', '#fff176', '#ffd54f', '#ffb74d', '#ff8a65'];
+
 let app = new Vue({
   el: '#app',
   data: {
@@ -5,7 +7,7 @@ let app = new Vue({
   },
   methods: {
     async getAllGames() {
-      return fetch('https://itch.io/games/free.xml')
+      return fetch('https://itch.io/games.xml')
         .then((response) => {
           return response.text();
         })
@@ -13,18 +15,34 @@ let app = new Vue({
           return xml2js(response, {compact: true}).rss.channel.item;
         });
     },
+    updateText() {
+      document.getElementById('game-title-text').innerHTML = this.currentGame.plainTitle._text;
+      document.getElementById('thumbnail').src = this.currentGame.imageurl._text;
+
+      if (this.currentGame.description._cdata) {
+        document.getElementById('game-description-text').innerHTML = this.currentGame.description._cdata;
+      }
+      else {
+        document.getElementById('game-description-text').innerHTML = "((No description provided))";
+      }
+      
+      document.getElementById('game-price-text').innerHTML = this.currentGame.price._text;
+    },
     async getNewGame() {
       this.currentGame = _.sample(await this.getAllGames());
-      let protocol = this.currentGame.imageurl._text.split("://");
-      protocol[0] = protocol[0].slice(0, -1);
-      this.currentGame.imageurl._text = protocol.join("://");
+      this.currentGame.description._cdata = this.currentGame.description._cdata.split("\n")[0];
+      this.updateText();
+      document.getElementById('app').setAttribute('style', 'background-color: ' + _.sample(colors));
+      console.log(this.currentGame);
+    },
+    goToGamePage() {
+      window.location.href = this.currentGame.link._text;
     },
     addToHistory() {
-
+      
     }
   },
   async beforeMount() {
     await this.getNewGame();
-    console.log(this.currentGame);
   }
 })

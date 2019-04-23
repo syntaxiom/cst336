@@ -1,13 +1,46 @@
 <head>
-  <script src="node_modules/xml-js/dist/xml-js.min.js"></script>
-  <script src="node_modules/underscore/underscore-min.js"></script>
+    <meta content="width=device-width,initial-scale=1,minimal-ui" name="viewport">
+    <script src="node_modules/xml-js/dist/xml-js.min.js"></script>
+    <script src="./node_modules/underscore/underscore-min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Open+Sans|Roboto+Slab" rel="stylesheet">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
+
+      <!--  -->
+      <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/vue-material.min.css">
+      <!--  -->
+    
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
 </head>
 <body>
-  <div id="app">
-    <img crossorigin="use-credentials" :src="currentGame.imageurl._text" height="42" width="42">
-    <button @click="getNewGame">Get new game</button>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  <script src="main.js"></script>
+    <div id="app">
+        <div class="app-title">
+          <h1><span><a href="https://itch.io/" class="code">Itch</a></span>ing to play a new game?</h1>
+        </div>
+        <div class="game-display">
+          <div class="game-title">
+            <h2 id="game-title-text"></h2>
+          </div>
+          <div class="game-thumbnail">
+            <img id="thumbnail" alt="Game Thumbnail">
+          </div>
+          <div class="game-description">
+            <h3 id="game-description-text"></h3>
+          </div>
+          <div class="game-price">
+            <h2 id="game-price-text"></h2>
+          </div>
+          <div class="buttons-row">
+            <div class="get-button">
+              <button class="md-button" @click="goToGamePage"><span class="button-text">Check it out</span></button>
+            </div>
+            <div class="get-button">
+              <button class="md-button" @click="getNewGame"><span class="button-text">Get new game</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="main.js"></script>
 </body>
