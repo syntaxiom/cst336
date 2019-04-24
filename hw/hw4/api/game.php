@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 
 include '../../../inc/dbConnection.php';
 $conn = getDatabaseConnection("games");
