@@ -1,4 +1,6 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+
     session_start();
     
     include '_db_connection.php';
