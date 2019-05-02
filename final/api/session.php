@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 
     session_start();
     
-    include '_db_connection.php';
+    include '../../inc/dbConnection.php';
     $conn = get_database_connection("store");
 
 

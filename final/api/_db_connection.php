@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
     function get_database_connection($dbname) {
     
         $host = "us-cdbr-iron-east-03.cleardb.net";
