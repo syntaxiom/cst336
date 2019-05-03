@@ -1,8 +1,8 @@
 <?php
     header("Access-Control-Allow-Origin: *");
-    if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-        return;
-    }
+    // if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+    //     return;
+    // }
     
     include '../../../inc/dbConnection.php';
     $conn = get_database_connection("store");
