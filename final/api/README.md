@@ -40,7 +40,7 @@ Returns an array of products.
  - `from` - The minimum price. Defaults to `None`.
  - `to` - The maximum price. Defaults to `None`.
  - `search` - Filter by search term.
- - `category` - Filter by category.
+ - `category` - Filter by category. This filter utilizes (big-endian) bitwise switches. Passing in the integer `26`, it's binary representation is `11010`. This will show products from categories 2, 4 and 5.
 
 ##### Sample Response: #####
 ```json

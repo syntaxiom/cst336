@@ -1,9 +1,7 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-
     session_start();
     
-    include '../../inc/dbConnection.php';
+    include '_db_connection.php';
     $conn = get_database_connection("store");
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {

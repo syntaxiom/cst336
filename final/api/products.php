@@ -1,9 +1,7 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-
     session_start();
     
-    include '../../inc/dbConnection.php';
+    include '_db_connection.php';
     $conn = get_database_connection("store");
 
 
@@ -11,7 +9,7 @@ header("Access-Control-Allow-Origin: *");
         
         $binder = array();
 
-        $binder["search"] = "%".$_GET["name"]."%";
+        $binder["search"] = "%".$_GET["search"]."%";
         
         $limit = (int)$_GET["limit"];
         $limit = isset($limit) && $limit != 0 ? " LIMIT ".$limit : "";
@@ -22,32 +20,48 @@ header("Access-Control-Allow-Origin: *");
         $ord = $_GET["sortby"];
         $ord = isset($ord) && strtolower($ord) == "name" ? "name" : "market_value";
         
-        $cat = (int)$_GET["category"];
+        $cat = $_GET["category"];
         $catsql = null;
-        if (isset($cat)){
-            $catsql = "AND cat_id = :cat_id";
-            $binder["cat_id"] = $cat;
+        if (isset($cat) && (int)$cat > 0){
+            $cat = (int)$cat;
+            $maxbit = (int)(log($cat) / log(2)) + 1;
+            $catarray = array();
+
+            
+            for ($i = 0; $i < $maxbit; $i++){
+                echo pow(2, $i);
+                if ($cat & pow(2, $i)){
+                    echo " push";
+                    array_push($catarray, $i+1);
+                }
+
+            }
+            
+            if (count($catarray) > 0){
+                $catsql = "AND category IN (" . implode(", ", $catarray) . ")";
+                
+            }
         }
-    
+
         $fromsql = null;
         $from = $_GET["from"];
         if (isset($from)){
             $binder["from"] = (float)$from;
-            $fromsql = "AND product_price >= :from";
+            $fromsql = "AND market_value >= :from";
         }
         
         $tosql = null;
         $to = $_GET["to"];
         if (isset($to)){
             $binder["to"] = (float)$to;
-            $tosql = "AND product_price <= :to";
+            $tosql = "AND market_value <= :to";
         }
     
         $extrasql = implode(" ", array_merge(array(""), array_filter(array($namesql, $catsql, $fromsql, $tosql)), array("")));
 
         
-        $sql = "SELECT * FROM companies WHERE name LIKE :search".$extrasql."ORDER BY ".$ord." ".$dir.$limit;
-    
+        $sql = "SELECT * FROM companies WHERE name LIKE :search".$extrasql." ORDER BY ".$ord." ".$dir.$limit;
+
         $stmt = $conn->prepare($sql);
         $stmt->execute($binder);
     
