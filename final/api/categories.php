@@ -5,7 +5,7 @@
         return;
     }
     
-    include '../inc/dbConnection.php';
+    include '../../inc/dbConnection.php';
     $conn = get_database_connection("store");
     $sql = "SELECT catId, catName, catDesc FROM categories ORDER BY catName";
     $stmt = $conn->prepare($sql);
