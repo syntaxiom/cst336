@@ -13,3 +13,6 @@ Stack trace:
 #0 /home/ubuntu/workspace/cst336/labs/lab7/loginProcess.php(21): PDOStatement->execute(Array)
 #1 {main}
   thrown in /home/ubuntu/workspace/cst336/labs/lab7/loginProcess.php on line 21
+[04-May-2019 20:39:21 UTC] PHP Fatal error:  Call to undefined function dbConnection() in /home/ubuntu/workspace/cst336/labs/lab9/index.php on line 63
+[04-May-2019 20:39:21 UTC] PHP Stack trace:
+[04-May-2019 20:39:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab9/index.php:0
