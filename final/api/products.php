@@ -22,19 +22,14 @@
         
         $cat = $_GET["category"];
         $catsql = null;
-        if (isset($cat) && (int)$cat > 0){
-            $cat = (int)$cat;
-            $maxbit = (int)(log($cat) / log(2)) + 1;
-            $catarray = array();
-
+        if (isset($cat)){
             
-            for ($i = 0; $i < $maxbit; $i++){
-                echo pow(2, $i);
-                if ($cat & pow(2, $i)){
-                    echo " push";
-                    array_push($catarray, $i+1);
-                }
+            $cat = explode(",", $cat);
 
+            $catarray = array();
+            
+            foreach ($cat as $c) {
+                array_push($catarray, (int)$c);
             }
             
             if (count($catarray) > 0){

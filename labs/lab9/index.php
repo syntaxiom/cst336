@@ -5,8 +5,11 @@
     // print_r($_FILES);
     
     // echo "Image size: " . $_FILES['myFile']['size'];
-    
     move_uploaded_file( $_FILES['myFile']['tmp_name'], "gallery/" . $_FILES['myFile']['name']);
+    
+    if ($_FILES['myFile']['size'] > 1048576){
+        echo "What";
+    }
 
 }
 
