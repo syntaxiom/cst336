@@ -1,5 +1,5 @@
 <?php
-    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Origin: GET, POST, OPTIONS, PUT, DELETE");
     session_start();
     
     include '_db_connection.php';
