@@ -1,5 +1,4 @@
 <?php
-    header("Access-Control-Allow-Methods: DELETE");
     session_start();
     
     include '_db_connection.php';
@@ -118,11 +117,15 @@
         return;
         
     } else if ($_SERVER['REQUEST_METHOD'] === 'DELETE'){
-
+        
+        if (!isset($binder["id"])){
+            echo '{"error": "id not passed"}';
+            return;
+        }
         $sql = "DELETE FROM companies WHERE compId = :id;";
 
         $stmt = $conn->prepare($sql);
-        $stmt->execute();
+        $stmt->execute($binder);
         
         echo "true";
         
