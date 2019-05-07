@@ -1,4 +1,5 @@
 <?php
+    header("Access-Control-Allow-Methods: DELETE");
     session_start();
     
     include '_db_connection.php';
