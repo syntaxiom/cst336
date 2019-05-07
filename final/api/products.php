@@ -1,4 +1,5 @@
 <?php
+    header("Access-Control-Allow-Origin: *");
     session_start();
     
     include '_db_connection.php';
@@ -67,12 +68,12 @@
     
     }
     
-    if (!isset($_SESSION['username'])) {
+    // if (!isset($_SESSION['username'])) {
         
-            echo "false";
-            return;
+    //         echo "false";
+    //         return;
         
-        }
+    //     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         
