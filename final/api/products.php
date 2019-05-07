@@ -1,10 +1,11 @@
 <?php
-    header("Access-Control-Allow-Methods: GET, POST, PATCH, DELETE");
     session_start();
     
     include '_db_connection.php';
     $conn = get_database_connection("store");
 
+    $binder = array();
+    parse_str(file_get_contents("php://input"), $binder);
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         
@@ -68,33 +69,33 @@
     
     }
     
-    // if (!isset($_SESSION['username'])) {
+    if (!isset($_SESSION['username'])) {
         
-    //         echo "false";
-    //         return;
+            echo "false";
+            return;
         
-    //     }
-
+        }
+    
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         
-        
+        if (isset($binder["action"])){
+            $_SERVER['REQUEST_METHOD'] = strtoupper($binder["action"]);
+            unset($binder["action"]);
+        } else {
+            $sql = "INSERT INTO companies (name, category, image, market_value, ceo, country, headquarters, description) VALUES (:name, :category, :image, :market_value, :ceo, :country, :headquarters, :description);";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute($binder);
+            
+            echo "true";
+            
+            return;
+            
+        }
 
-        $binder = array();
-        parse_str(file_get_contents("php://input"), $binder);
-
-        $sql = "INSERT INTO companies (name, category, image, market_value, ceo, country, headquarters, description) VALUES (:name, :category, :image, :market_value, :ceo, :country, :headquarters, :description);";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute($binder);
-        
-        echo "true";
-        
-        return;
     
-    } else if ($_SERVER['REQUEST_METHOD'] === 'PATCH'){
-
-
-        $binder = array();
-        parse_str(file_get_contents("php://input"), $binder);
+    } 
+    
+    if ($_SERVER['REQUEST_METHOD'] === 'PATCH'){
 
         $sql = "UPDATE companies SET
             name = :name,
@@ -117,13 +118,10 @@
         
     } else if ($_SERVER['REQUEST_METHOD'] === 'DELETE'){
 
-        $binder = array();
-        parse_str(file_get_contents("php://input"), $binder);
-
         $sql = "DELETE FROM companies WHERE compId = :id;";
 
         $stmt = $conn->prepare($sql);
-        $stmt->execute($binder);
+        $stmt->execute();
         
         echo "true";
         
