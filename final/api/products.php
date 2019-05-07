@@ -119,10 +119,10 @@
         
     } else if ($_SERVER['REQUEST_METHOD'] === 'DELETE'){
         
-        if (!isset($binder["id"])){
-            echo '{"error": "id not passed"}';
-            return;
-        }
+        // if (!isset($binder["id"])){
+        //     echo '{"error": "id not passed"}';
+        //     return;
+        // }
         $sql = "DELETE FROM companies WHERE compId = :id;";
 
         $stmt = $conn->prepare($sql);
