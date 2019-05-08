@@ -1,12 +1,10 @@
 <?php
-    header("Access-Control-Allow-Methods: DELETE");
     session_start();
     
     include '_db_connection.php';
     $conn = get_database_connection("store");
 
-    $binder = array();
-    parse_str(file_get_contents("php://input"), $binder);
+    $binder = json_decode(file_get_contents("php://input"), TRUE);
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         
@@ -70,12 +68,12 @@
     
     }
     
-    // if (!isset($_SESSION['username'])) {
+    if (!isset($_SESSION['username'])) {
         
-    //         echo "false";
-    //         return;
+            echo "false";
+            return;
         
-    //     }
+        }
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         
@@ -119,10 +117,10 @@
         
     } else if ($_SERVER['REQUEST_METHOD'] === 'DELETE'){
         
-        // if (!isset($binder["id"])){
-        //     echo '{"error": "id not passed"}';
-        //     return;
-        // }
+        if (!isset($binder["id"])){
+            echo '{"error": "id not passed"}';
+            return;
+        }
         $sql = "DELETE FROM companies WHERE compId = :id;";
 
         $stmt = $conn->prepare($sql);
