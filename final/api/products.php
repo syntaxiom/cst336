@@ -70,12 +70,12 @@
     
     }
     
-    // if (!isset($_SESSION['username'])) {
+    if (!isset($_SESSION['username'])) {
         
-    //         echo "false";
-    //         return;
+            echo "false";
+            return;
         
-    //     }
+        }
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         
