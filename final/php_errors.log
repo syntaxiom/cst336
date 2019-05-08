@@ -26,3 +26,8 @@ Stack trace:
 #0 /home/ubuntu/workspace/cst336/final/api/products.php(127): PDOStatement->execute(Array)
 #1 {main}
   thrown in /home/ubuntu/workspace/cst336/final/api/products.php on line 127
+[08-May-2019 20:52:20 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/final/api/purchases.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/final/api/purchases.php(16): PDOStatement->fetchAll(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/final/api/purchases.php on line 16

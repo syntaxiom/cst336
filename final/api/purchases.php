@@ -13,9 +13,7 @@
         $stmt = $conn->prepare($sql);
         $stmt->execute($binder);
     
-        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode($records);
-        
+        echo "true";
         return;
     
     }
