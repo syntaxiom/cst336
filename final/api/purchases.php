@@ -3,11 +3,10 @@
     
     include '_db_connection.php';
     $conn = get_database_connection("store");
+    
+    $binder = json_decode(file_get_contents("php://input"), TRUE);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-        $binder = array();
-        parse_str(file_get_contents("php://input"), $binder);
 
         $sql = "INSERT INTO purchases (productId, unitPrice, purchaseDate) VALUES (:productId, :unitPrice, :purchaseDate)";
     
