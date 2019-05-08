@@ -108,7 +108,7 @@
             headquarters = :headquarters,
             description = :description
         WHERE
-            compId = :id;";
+            compId = :compId;";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute($binder);
